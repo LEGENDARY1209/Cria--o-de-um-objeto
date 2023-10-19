@@ -16,7 +16,7 @@ class Car
         }
 }
 
-$bmw = new Car;
+$bmw = new Car; 
 //bmw->setColor("black");
 echo $bmw-> numberOfTires;
 
