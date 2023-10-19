@@ -1,13 +1,14 @@
 <?php
 class Car
 {
-        public $color = 'red';
-        public $numberOfTires = 4;
+        private $color = 'red';
+        private $numberOfTires = 4;
+        public static $country = "Canada";
         public function _construct($color)
         {
             $this->color = $color;
         }
-         Public function __destruct()
+        public function __destruct()
         {
                echo "Objeto está sendo destruído";
         }
@@ -20,9 +21,10 @@ class Car
             return $this->color;
         }             
 }
-
 $bmw = new Car("white");
-echo $bmw->getColor(); //isso imprimirá "branco" porque nosso construtor atribuiu o valor "branco" à propriedade color
-echo $bmw->setColor("black"); // isso irá sobrescrever a propriedade da cor para preto  
+//echo $bmw->color; //Apresentará erro porque a propriedade color é privada
 echo $bmw->getColor();
+$bmw->setColor("black");
+echo $bmw->getColor();
+echo Car::$country;
 ?>
